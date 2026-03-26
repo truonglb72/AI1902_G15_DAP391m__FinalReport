@@ -41,25 +41,32 @@ jupyter notebook Feature.ipynb
 jupyter notebook Train_model.ipynb
 Research Questions
 
+
 RQ1: Are linear models sufficient to describe the relationship between material composition and compressive strength?
 
 This project evaluates OLS, Ridge, and Lasso to determine whether linear relationships are enough for strength prediction.
+
 
 RQ2: Does feature engineering improve the performance of linear regression models?
 
 The study compares raw features with engineered features such as water-cement ratio and cement-age interaction.
 
+
 RQ3: Can SVR reduce prediction errors, especially at extreme strength levels?
 
 SVR with RBF kernel is used as a non-linear alternative and compared against linear models.
+
 
 Feature Engineering
 
 The following engineered features are included:
 
 Water_Cement_Ratio = Water / Cement
+
 Cement_Age_Interaction = Cement × Age
+
 Log_Age = log(Age + 1)
+
 
 These features are designed to better capture material behavior and curing effects.
 
@@ -110,6 +117,7 @@ detect bias
 inspect heteroscedasticity
 observe whether errors increase in extreme ranges
 Main Contributions
+
 1. Machine Learning Pipeline
 
 A full regression pipeline is implemented:
@@ -120,6 +128,7 @@ model training
 cross-validation
 error slicing
 residual analysis
+
 2. Ablation Study
 
 The project compares:
@@ -127,6 +136,7 @@ The project compares:
 raw features vs engineered features
 Ridge vs Lasso
 linear models vs SVR
+
 3. Practical Prediction Support
 
 The system supports estimating compressive strength from input material composition and age, which can assist concrete mix decision-making.
@@ -135,30 +145,37 @@ Applications
 
 This project can be extended into an application where users:
 
-enter material composition values
-receive predicted compressive strength
-view feature-based explanation
-receive warning if the input is outside the normal data range
+  enter material composition values
+  receive predicted compressive strength
+  view feature-based explanation
+  receive warning if the input is outside the normal data range
+
 Limitations and Risks
+
 Data Limitations
-The dataset is relatively small compared to industrial-scale data
-The data may not cover all real-world material conditions
-Measurement conditions and lab setup may vary from practical deployment environments
+  The dataset is relatively small compared to industrial-scale data
+  The data may not cover all real-world material conditions
+  Measurement conditions and lab setup may vary from practical deployment environments
+
 Modeling Limitations
-Linear models may underfit complex relationships
-SVR is more accurate but less interpretable
-Extreme strength values may still have higher prediction errors
+  Linear models may underfit complex relationships
+  SVR is more accurate but less interpretable
+  Extreme strength values may still have higher prediction errors
+
 Deployment Risks
-Predictions should not replace engineering judgment
-Out-of-distribution inputs may reduce reliability
-Real construction settings may differ from controlled dataset conditions
+  Predictions should not replace engineering judgment
+  Out-of-distribution inputs may reduce reliability
+  Real construction settings may differ from controlled dataset conditions
+
+
 Conclusion
 
 This project shows that concrete compressive strength can be predicted using machine learning methods from material composition and curing age. Linear regression models provide interpretable baselines, while SVR offers stronger predictive performance for non-linear relationships. Feature engineering and error analysis improve both understanding and reliability of the modeling pipeline.
 
 Future Work
-Add an interactive prediction app
-Add chatbot support for project explanation
-Test additional models such as Random Forest or XGBoost
-Explore neural networks as an optional comparison
-Improve explainability with SHAP or coefficient-based dashboards
+
+  Add an interactive prediction app
+  Add chatbot support for project explanation
+  Test additional models such as Random Forest or XGBoost
+  Explore neural networks as an optional comparison
+  Improve explainability with SHAP or coefficient-based dashboards
